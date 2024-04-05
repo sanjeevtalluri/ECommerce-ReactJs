@@ -11,7 +11,7 @@ const AddToCart = ({ product }) => {
   const { id, stock, colors } = product
   const [mainColor, setMainColor] = useState(colors[0])
   const [amount, setAmount] = useState(1)
-
+  //new comment
   const increase = () => {
     setAmount((oldAmount) => {
       let tempAmount = oldAmount + 1
