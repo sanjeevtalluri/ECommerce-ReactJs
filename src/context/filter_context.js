@@ -54,16 +54,29 @@ export const FilterProvider = ({ children }) => {
     const value = e.target.value
     dispatch({ type: UPDATE_SORT,payload:value })
   }
+
+  const clearFilters = ()=>{
+    dispatch({ type: CLEAR_FILTERS});
+  }
   const updateFilters = (e) =>{
     const name = e.target.name;
     let value = e.target.value;
     if(name === 'category'){
       value = e.target.textContent
     }
+    if (name === 'color') {
+      value = e.target.dataset.color
+    }
+    if (name === 'price') {
+      value = Number(value)
+    }
+    if (name === 'shipping') {
+      value = e.target.checked
+    }
     dispatch({type:UPDATE_FILTERS,payload:{name,value}});
   }
   return (
-    <FilterContext.Provider value={{...state,setGridView,setListView,updateSort, updateFilters}}>
+    <FilterContext.Provider value={{...state,setGridView,setListView,updateSort, updateFilters,clearFilters}}>
       {children}
     </FilterContext.Provider>
   );
