@@ -6,5 +6,6 @@ import Products from "./ProductsPage";
 import SingleProduct from "./SingleProductPage";
 import Error from "./ErrorPage";
 import PrivateRoute from "./PrivateRoute";
+import AuthWrapper from "./AuthWrapper";
 
-export {Home,About,Cart,Checkout,SingleProduct,Products,Error,PrivateRoute}
+export {Home,About,Cart,Checkout,SingleProduct,Products,Error,PrivateRoute,AuthWrapper}
